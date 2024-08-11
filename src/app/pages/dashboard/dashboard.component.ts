@@ -77,15 +77,6 @@ export interface productsData {
   priority: string;
 }
 
-// ecommerce card
-interface productcards {
-  id: number;
-  imgSrc: string;
-  title: string;
-  price: string;
-  rprice: string;
-}
-
 const ELEMENT_DATA: productsData[] = [
   {
     id: 1,
@@ -94,7 +85,7 @@ const ELEMENT_DATA: productsData[] = [
     position: 'Web Designer',
     productName: 'Elite Admin',
     budget: 3.9,
-    priority: 'low',
+    priority: 'wpływ',
   },
   {
     id: 2,
@@ -103,7 +94,7 @@ const ELEMENT_DATA: productsData[] = [
     position: 'Project Manager',
     productName: 'Real Homes Theme',
     budget: 24.5,
-    priority: 'medium',
+    priority: 'wpływ',
   },
   {
     id: 3,
@@ -112,7 +103,7 @@ const ELEMENT_DATA: productsData[] = [
     position: 'Project Manager',
     productName: 'MedicalPro Theme',
     budget: 12.8,
-    priority: 'high',
+    priority: 'wpływ',
   },
   {
     id: 4,
@@ -121,7 +112,7 @@ const ELEMENT_DATA: productsData[] = [
     position: 'Frontend Engineer',
     productName: 'Hosting Press HTML',
     budget: 2.4,
-    priority: 'critical',
+    priority: 'wydatek',
   },
 ];
 
@@ -148,37 +139,7 @@ export class AppDashboardComponent {
 
 
 
-  // ecommerce card
-  productcards: productcards[] = [
-    {
-      id: 1,
-      imgSrc: '/assets/images/products/s4.jpg',
-      title: 'Boat Headphone',
-      price: '285',
-      rprice: '375',
-    },
-    {
-      id: 2,
-      imgSrc: '/assets/images/products/s5.jpg',
-      title: 'MacBook Air Pro',
-      price: '285',
-      rprice: '375',
-    },
-    {
-      id: 3,
-      imgSrc: '/assets/images/products/s7.jpg',
-      title: 'Red Valvet Dress',
-      price: '285',
-      rprice: '375',
-    },
-    {
-      id: 4,
-      imgSrc: '/assets/images/products/s11.jpg',
-      title: 'Cute Soft Teddybear',
-      price: '285',
-      rprice: '375',
-    },
-  ];
+  
 
   constructor() {
     // sales overview chart
