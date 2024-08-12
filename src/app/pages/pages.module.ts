@@ -9,14 +9,23 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import { TablerIconsModule } from 'angular-tabler-icons';
 import * as TablerIcons from 'angular-tabler-icons/icons';
 import { AppDashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+
+
+
 
 @NgModule({
   declarations: [AppDashboardComponent],
   imports: [
+    HttpClientModule,
     CommonModule,
     MaterialModule,
     FormsModule,
     NgApexchartsModule,
+    MatCardModule, // Dodaj ten import
+    MatTableModule,
     RouterModule.forChild(PagesRoutes),
     TablerIconsModule.pick(TablerIcons),
   ],
