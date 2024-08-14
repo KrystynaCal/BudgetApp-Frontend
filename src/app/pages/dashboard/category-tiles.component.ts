@@ -10,12 +10,12 @@ import * as moment from 'moment';
 })
 export class CategoryTilesComponent implements OnInit {
   categories: CategoryDto[] = [];
-  
+  defaultMonth: moment.Moment = moment(); // Initialize with current month
 
   constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
-    this.loadCategories(moment().format('YYYY-MM'));
+    this.loadCategories(this.defaultMonth.format('YYYY-MM'));
   }
 
   loadCategories(yearMonth: string): void {
@@ -27,6 +27,7 @@ export class CategoryTilesComponent implements OnInit {
 
   onMonthSelected(event: any): void {
     const chosenMonth = moment(event.value).format('YYYY-MM');
+    this.defaultMonth = moment(event.value); // Update defaultMonth
     this.loadCategories(chosenMonth);
   }
 

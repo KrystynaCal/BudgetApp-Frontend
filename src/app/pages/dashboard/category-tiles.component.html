@@ -3,7 +3,7 @@
   <div class="col-lg-12 mb-4">
     <mat-form-field appearance="fill">
       <mat-label>Wybierz miesiąc</mat-label>
-      <input matInput [matDatepicker]="picker" placeholder="MM/YYYY" (dateChange)="onMonthSelected($event)">
+      <input matInput [matDatepicker]="picker" [value]="defaultMonth.toDate()" placeholder="MM/YYYY" (dateChange)="onMonthSelected($event)">
       <mat-datepicker #picker startView="multi-year" (monthSelected)="chosenMonthHandler($event, picker)" panelClass="example-month-picker"></mat-datepicker>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     </mat-form-field>
