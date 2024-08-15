@@ -1,25 +1,46 @@
+/* Stylowanie ogólne kart */
 .card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-body {
-    padding: 16px;
-  }
-  
-  .card-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-  
-  .card-text {
-    font-size: 1rem;
-  }
-  
-  .btn-primary {
-    margin-top: 8px;
-  }
-  
-  .example-month-picker .mat-calendar {
-    width: 300px;
-  }
-  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.btn-primary {
+  margin-top: 8px;
+}
+
+/* Stylowanie okna wyboru miesiąca */
+.example-month-picker .mat-calendar {
+  width: 300px;
+}
+
+/* Stylowanie kafelka dodawania nowej kategorii */
+.add-category-card {
+  background-color: #f8f9fa;
+  border: 2px dashed #6c757d;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-category-card:hover {
+  background-color: #e2e6ea;
+}
+
+/* Stylowanie treści kafelka */
+.add-category-card .card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}

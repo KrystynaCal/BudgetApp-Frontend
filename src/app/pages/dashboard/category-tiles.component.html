@@ -2,8 +2,8 @@
   <!-- Date Picker for selecting month -->
   <div class="col-lg-12 mb-4">
     <mat-form-field appearance="fill">
-      <mat-label>Wybierz miesiąc</mat-label>
-      <input matInput [matDatepicker]="picker" [value]="defaultMonth.toDate()" placeholder="MM/YYYY" (dateChange)="onMonthSelected($event)">
+      <mat-label>{{ defaultMonth.format('MMMM YYYY') }}</mat-label>
+      <input matInput [matDatepicker]="picker" [value]="defaultMonth.toDate()" (dateChange)="onMonthSelected($event)">
       <mat-datepicker #picker startView="multi-year" (monthSelected)="chosenMonthHandler($event, picker)" panelClass="example-month-picker"></mat-datepicker>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     </mat-form-field>
@@ -15,7 +15,16 @@
       <div class="card-body">
         <h5 class="card-title">{{ category.name }}</h5>
         <p class="card-text">{{ category.categoryType }}</p>
-        <a [routerLink]="['/categories', category.id, 'transactions']" class="btn btn-primary">View Transactions</a>
+        <a class="btn btn-primary">View Transactions</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kafelek do dodania nowej kategorii -->
+  <div class="col-lg-4 col-md-6 mb-3">
+    <div class="card add-category-card" (click)="openAddCategoryModal()">
+      <div class="card-body text-center">
+        <h5 class="card-title">+ Add New Category</h5>
       </div>
     </div>
   </div>

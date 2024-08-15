@@ -21,4 +21,9 @@ export class CategoryService {
   getCategories(yearMonth: string): Observable<CategoryDto[]> {
     return this.http.get<CategoryDto[]>(`${this.baseUrl}/categories?yearMonth=${yearMonth}`);
   }
+
+  addCategory(category: CategoryDto): Observable<CategoryDto> {
+    return this.http.post<CategoryDto>(`${this.baseUrl}/categories`, category);
+  }
+  
 }

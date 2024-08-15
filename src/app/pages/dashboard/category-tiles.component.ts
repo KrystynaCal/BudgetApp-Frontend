@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService, CategoryDto } from '../../services/category.service';
 import { MatDatepicker } from '@angular/material/datepicker';
+import { MatDialog } from '@angular/material/dialog';
 import * as moment from 'moment';
+import { AddCategoryComponent } from '../add-category/add-category.component';
 
 @Component({
   selector: 'app-category-tiles',
@@ -12,7 +14,10 @@ export class CategoryTilesComponent implements OnInit {
   categories: CategoryDto[] = [];
   defaultMonth: moment.Moment = moment(); // Initialize with current month
 
-  constructor(private categoryService: CategoryService) {}
+  constructor(
+    private categoryService: CategoryService,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.loadCategories(this.defaultMonth.format('YYYY-MM'));
@@ -35,5 +40,21 @@ export class CategoryTilesComponent implements OnInit {
     const ctrlValue = normalizedMonth;
     this.onMonthSelected({ value: ctrlValue });
     datepicker.close();
+  }
+
+  openAddCategoryModal(): void {
+    const dialogRef = this.dialog.open(AddCategoryComponent, { width: '400px' });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.addCategory(result);
+      }
+    });
+  }
+
+  addCategory(category: CategoryDto): void {
+    this.categoryService.addCategory(category).subscribe({
+      next: () => this.loadCategories(this.defaultMonth.format('YYYY-MM')),
+      error: (err) => console.error('Error adding category', err)
+    });
   }
 }
