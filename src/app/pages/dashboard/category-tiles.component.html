@@ -15,6 +15,7 @@
       <div class="card-body">
         <h5 class="card-title">{{ category.name }}</h5>
         <p class="card-text">{{ category.categoryType }}</p>
+        <p class="card-amount">{{ category.totalAmount | currency:'zł' }}</p>
         <a class="btn btn-primary">View Transactions</a>
       </div>
     </div>
