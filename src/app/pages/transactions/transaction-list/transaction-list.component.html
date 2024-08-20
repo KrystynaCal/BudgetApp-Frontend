@@ -1,6 +1,5 @@
 <div class="container">
-    <h2>Transactions for Category: {{ category.name }}</h2>
-    <p><strong>Category Type:</strong> {{ category.categoryType }}</p>
+    <h2>{{ category.name }}</h2>
     <p><strong>Total Amount:</strong> {{ category.totalAmount | currency:'PLN':'symbol':'1.2-2' }}</p>
     <p><strong>Created At:</strong> {{ category.createdAt | date:'yyyy-MM' }}</p>
   

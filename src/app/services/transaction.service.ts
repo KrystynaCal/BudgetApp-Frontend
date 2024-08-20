@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 interface TransactionDto {
@@ -29,15 +29,17 @@ interface CategoryDetailsDto {
   providedIn: 'root'
 })
 export class TransactionService {
-  private apiUrl = '/api/categories'; // Base URL for the API
+  private apiUrl = 'http://localhost:8080/categories'; 
 
   constructor(private http: HttpClient) {}
 
   getCategoryDetails(categoryId: number, yearMonth?: string): Observable<CategoryDetailsDto> {
-    let url = `${this.apiUrl}/${categoryId}`;
+    let params = new HttpParams();
+    
     if (yearMonth) {
-      url += `?yearMonth=${yearMonth}`;
+      params = params.set('yearMonth', yearMonth);
     }
-    return this.http.get<CategoryDetailsDto>(url);
+
+    return this.http.get<CategoryDetailsDto>(`${this.apiUrl}/${categoryId}`, { params });
   }
 }
