@@ -44,3 +44,30 @@
   align-items: center;
   height: 100%;
 }
+
+/* Stylowanie nagłówka Finanse */
+.text-left {
+  text-align: left;
+}
+
+/* Stylowanie nagłówka Kategorie */
+.categories-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1.5rem; /* Adjust font size as needed */
+}
+
+.categories-header h2 {
+  margin: 0;
+}
+
+/* Dostosowanie układu wyboru miesiąca i nagłówka Kategorie */
+.row.align-items-center {
+  align-items: center; /* Vertically center items */
+}
+
+.col-lg-6 {
+  padding-right: 15px; /* Ensure spacing between elements */
+  padding-left: 15px; /* Ensure spacing between elements */
+}
