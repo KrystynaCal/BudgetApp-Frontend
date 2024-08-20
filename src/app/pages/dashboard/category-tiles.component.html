@@ -16,7 +16,7 @@
         <h5 class="card-title">{{ category.name }}</h5>
         <p class="card-text">{{ category.categoryType }}</p>
         <p class="card-amount">{{ category.totalAmount | currency:'zł' }}</p>
-        <a class="btn btn-primary">View Transactions</a>
+        <a [routerLink]="['/dashboard', category.id, 'transactions']" class="btn btn-primary">View Transactions</a>
       </div>
     </div>
   </div>

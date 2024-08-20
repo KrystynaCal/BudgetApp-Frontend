@@ -3,7 +3,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { PagesRoutes } from './pages.routing.module';
+import { PagesRoutingModule  } from './pages.routing.module';
 import { MaterialModule } from '../material.module';
 import { FormsModule } from '@angular/forms';
 import { NgApexchartsModule } from 'ng-apexcharts';
@@ -37,7 +37,7 @@ import { AddCategoryComponent } from './add-category/add-category.component';
     MatTableModule,
     MatSelectModule, 
     MatOptionModule, 
-    RouterModule.forChild(PagesRoutes),
+    PagesRoutingModule,
     TablerIconsModule.pick(TablerIcons),
   ],
   exports: [TablerIconsModule],

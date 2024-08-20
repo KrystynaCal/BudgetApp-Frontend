@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Transactions for Category: {{ category.name }}</h2>
+    <p><strong>Category Type:</strong> {{ category.categoryType }}</p>
+    <p><strong>Total Amount:</strong> {{ category.totalAmount | currency:'PLN':'symbol':'1.2-2' }}</p>
+    <p><strong>Created At:</strong> {{ category.createdAt | date:'yyyy-MM' }}</p>
+  
+    <table class="table table-striped mt-4">
+      <thead>
+        <tr>
+          <th>Transaction Name</th>
+          <th>Amount</th>
+          <th>Date</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transaction of transactions">
+          <td>{{ transaction.name }}</td>
+          <td>{{ transaction.amount | currency:'PLN':'symbol':'1.2-2' }}</td>
+          <td>{{ transaction.date | date:'yyyy-MM-dd' }}</td>
+          <td>{{ transaction.description }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="transactions.length === 0" class="alert alert-info mt-4">
+      No transactions found for this category.
+    </div>
+  </div>
+  

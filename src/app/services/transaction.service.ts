@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-export interface TransactionDto {
+interface TransactionDto {
   id: number;
   amount: number;
   name: string;
@@ -12,15 +12,32 @@ export interface TransactionDto {
   categoryName: string;
 }
 
+interface CategoryDto {
+  id: number;
+  name: string;
+  categoryType: string;
+  totalAmount: number;
+  createdAt: string;
+}
+
+interface CategoryDetailsDto {
+  category: CategoryDto;
+  transactions: TransactionDto[];
+}
+
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class TransactionService {
-  private apiUrl = 'http://localhost:8080/transactions'; 
+  private apiUrl = '/api/categories'; // Base URL for the API
 
   constructor(private http: HttpClient) {}
 
-  getAllTransactions(): Observable<TransactionDto[]> {
-    return this.http.get<TransactionDto[]>(this.apiUrl);
+  getCategoryDetails(categoryId: number, yearMonth?: string): Observable<CategoryDetailsDto> {
+    let url = `${this.apiUrl}/${categoryId}`;
+    if (yearMonth) {
+      url += `?yearMonth=${yearMonth}`;
+    }
+    return this.http.get<CategoryDetailsDto>(url);
   }
 }
