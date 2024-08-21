@@ -1,15 +1,14 @@
 <div class="container">
     <h2>{{ category.name }}</h2>
-    <p><strong>Total Amount:</strong> {{ category.totalAmount | currency:'PLN':'symbol':'1.2-2' }}</p>
-    <p><strong>Created At:</strong> {{ category.createdAt | date:'yyyy-MM' }}</p>
-  
+    <p>{{ category.totalAmount | currency:'PLN':'symbol':'1.2-2' }}</p>
+ 
     <table class="table table-striped mt-4">
       <thead>
         <tr>
-          <th>Transaction Name</th>
-          <th>Amount</th>
-          <th>Date</th>
-          <th>Description</th>
+          <th>Nazwa</th>
+          <th>Wartość</th>
+          <th>Data</th>
+          <th>Opis</th>
         </tr>
       </thead>
       <tbody>
@@ -26,4 +25,4 @@
       No transactions found for this category.
     </div>
   </div>
-  
+<!-- TODO Button do dodawania transakcji-->
