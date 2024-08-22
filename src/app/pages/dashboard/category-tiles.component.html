@@ -35,7 +35,7 @@
           <h5 class="card-title">{{ category.name }}</h5>
           <!-- <p class="card-text">{{ category.categoryType }}</p> -->
           <p class="card-amount">{{ category.totalAmount | currency:'zł' }}</p>
-          <a [routerLink]="['/dashboard', category.id, 'transactions']"
+          <a [routerLink]="['/categories', category.id, 'transactions']"
             [queryParams]="{ month: defaultMonth.format('YYYY-MM') }" class="btn btn-primary">Zobacz Transakcje</a>
         </div>
       </div>

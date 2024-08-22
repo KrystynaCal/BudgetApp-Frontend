@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TransactionService } from '../../../services/transaction.service';
 
 interface TransactionDto {
@@ -44,7 +44,8 @@ export class TransactionListComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private transactionService: TransactionService
+    private transactionService: TransactionService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -65,5 +66,9 @@ export class TransactionListComponent implements OnInit {
         error: (err) => console.error('Error loading transactions', err),
       });
     }
+  }
+
+  navigateToAddTransaction(): void {
+    this.router.navigate([`/categories/${this.category.id}/transactions/add`])
   }
 }
