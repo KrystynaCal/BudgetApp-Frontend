@@ -57,4 +57,9 @@ export class TransactionService {
     const params = new HttpParams().set('categoryId', categoryId.toString());
     return this.http.post<TransactionDto>(this.transactionApiUrl, transactionCreateDto, { params });
   }
+
+  deleteTransaction(transactionId: number): Observable<void> {
+    return this.http.delete<void>(`${this.transactionApiUrl}/${transactionId}`);
+  }
+  
 }

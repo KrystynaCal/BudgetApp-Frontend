@@ -15,6 +15,7 @@
         <th>Wartość</th>
         <th>Data</th>
         <th>Opis</th>
+        <th>Usuń</th>
       </tr>
     </thead>
     <tbody>
@@ -23,6 +24,11 @@
         <td>{{ transaction.amount | currency:'PLN':'symbol':'1.2-2' }}</td>
         <td>{{ transaction.date | date:'yyyy-MM-dd' }}</td>
         <td>{{ transaction.description }}</td>
+        <td>
+          <button class="btn btn-danger btn-sm" (click)="deleteTransaction(transaction.id)">
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>

@@ -71,4 +71,16 @@ export class TransactionListComponent implements OnInit {
   navigateToAddTransaction(): void {
     this.router.navigate([`/categories/${this.category.id}/transactions/add`])
   }
+
+  deleteTransaction(transactionId: number): void {
+    if (confirm('Czy na pewno chcesz usunąć tę transakcję?')) {
+      this.transactionService.deleteTransaction(transactionId).subscribe({
+        next: () => {
+          // Filtruj listę transakcji po usunięciu
+          this.transactions = this.transactions.filter(transaction => transaction.id !== transactionId);
+        },
+        error: (err) => console.error('Error deleting transaction', err),
+      });
+    }
+  }
 }
