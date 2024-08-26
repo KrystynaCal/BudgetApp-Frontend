@@ -39,13 +39,26 @@ export class AddTransactionComponent implements OnInit {
         .subscribe({
           next: (response) => {
             console.log('Transaction successfully created:', response);
-            //TODO change navigation
-            this.router.navigate(['/categories', this.categoryId]);
+            this.router.navigate([`categories/${this.categoryId}/transactions`]);
           },
           error: (error) => {
             console.error('Error creating transaction:', error);
           }
         });
+    }
+  }
+  onSubmitAndAddAnother(): void {
+    if (this.transactionForm.valid) {
+      const transactionData: TransactionCreateDto = this.transactionForm.value;
+      this.transactionService.saveTransaction(transactionData, this.categoryId).subscribe({
+        next: (response) => {
+          console.log('Transaction successfully created:', response);
+          this.transactionForm.reset();
+        },
+        error: (error) => {
+          console.error('Error creating transaction:', error);
+        }
+      });
     }
   }
 }

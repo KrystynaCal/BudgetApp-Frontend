@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-6"> <!-- Dostosuj szerokość formularza tutaj -->
+    <div class="col-md-6"> 
       <h2>Nowa Transakcja</h2>
       <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
@@ -22,8 +22,14 @@
           <label for="description">Opis</label>
           <textarea id="description" formControlName="description" class="form-control"></textarea>
         </div>
-        
-        <button type="submit" class="btn btn-primary" [disabled]="transactionForm.invalid">Save Transaction</button>
+        <div class="row">
+          <div class="col-6">
+            <button type="submit" class="btn btn-primary button-margin-right" [disabled]="transactionForm.invalid">Zapisz</button>
+          </div>
+          <div class="col-6">
+            <button type="button" class="btn btn-primary" (click)="onSubmitAndAddAnother()" [disabled]="transactionForm.invalid">Zapisz i dodaj kolejną</button>
+          </div>
+        </div>
       </form>
     </div>
   </div>
