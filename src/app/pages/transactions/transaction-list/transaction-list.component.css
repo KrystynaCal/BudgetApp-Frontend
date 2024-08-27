@@ -1,0 +1,65 @@
+/* Stylowanie ogólne kontenera transakcji */
+.container {
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  /* Stylowanie nagłówka kategorii */
+  .container h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  /* Stylowanie tekstu sumarycznej kwoty i daty utworzenia */
+  .container p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Stylowanie tabeli transakcji */
+  .table {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+    border-collapse: collapse;
+  }
+  
+  .table thead th {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+  }
+  
+  .table tbody td {
+    padding: 12px;
+    font-size: 1rem;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #e9ecef;
+  }
+  
+  /* Stylowanie komunikatu o braku transakcji */
+  .alert {
+    padding: 20px;
+    background-color: #17a2b8;
+    color: white;
+    border-radius: 4px;
+  }
+  
+  .alert-info {
+    background-color: #17a2b8; /* Zmiana na bardziej neutralny niebieski */
+  }
+  
+  .mt-4 {
+    margin-top: 20px;
+  }
+
+  
