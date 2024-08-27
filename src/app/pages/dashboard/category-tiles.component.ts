@@ -57,4 +57,16 @@ export class CategoryTilesComponent implements OnInit {
       error: (err) => console.error('Error adding category', err)
     });
   }
+
+  deleteCategory(categoryId: number): void {
+    if (confirm('Czy na pewno chcesz usunąć tę kategorię?')) {
+      this.categoryService.deleteCategory(categoryId).subscribe({
+        next: () => {
+          this.categories = this.categories.filter(category => category.id !== categoryId);
+          alert('Kategoria została usunięta.');
+        },
+        error: (err) => console.error('Błąd podczas usuwania kategorii', err)
+      });
+    }
+  }
 }

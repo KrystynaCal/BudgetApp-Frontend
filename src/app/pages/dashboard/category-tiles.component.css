@@ -1,5 +1,28 @@
-/* Stylowanie ogólne kart */
+.bi-trash {
+  font-size: 1.5rem;
+  color: red;
+  visibility: visible;
+}
+
+.delete-category-btn {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  color: red;
+}
+
+.delete-category-btn:hover {
+  background-color: #f8f9fa;
+}
+
 .card {
+  position: relative;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -12,20 +35,19 @@
   font-weight: 600;
 }
 
-.card-text {
-  font-size: 1rem;
+.card-amount {
+  font-size: 1.1rem;
+  margin-top: 8px;
 }
 
 .btn-primary {
   margin-top: 8px;
 }
 
-/* Stylowanie okna wyboru miesiąca */
 .example-month-picker .mat-calendar {
   width: 300px;
 }
 
-/* Stylowanie kafelka dodawania nowej kategorii */
 .add-category-card {
   background-color: #f8f9fa;
   border: 2px dashed #6c757d;
@@ -37,7 +59,6 @@
   background-color: #e2e6ea;
 }
 
-/* Stylowanie treści kafelka */
 .add-category-card .card-body {
   display: flex;
   justify-content: center;
@@ -45,29 +66,42 @@
   height: 100%;
 }
 
-/* Stylowanie nagłówka Finanse */
 .text-left {
   text-align: left;
 }
 
-/* Stylowanie nagłówka Kategorie */
 .categories-header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: 1.5rem; /* Adjust font size as needed */
+  font-size: 1.5rem;
 }
 
 .categories-header h2 {
   margin: 0;
 }
 
-/* Dostosowanie układu wyboru miesiąca i nagłówka Kategorie */
 .row.align-items-center {
-  align-items: center; /* Vertically center items */
+  align-items: center;
 }
 
 .col-lg-6 {
-  padding-right: 15px; /* Ensure spacing between elements */
-  padding-left: 15px; /* Ensure spacing between elements */
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.btn-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  text-decoration: none;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.card-body .d-flex {
+  align-items: center;
+  justify-content: space-between;
 }
