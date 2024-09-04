@@ -18,6 +18,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { CategoryTilesComponent } from './dashboard/category-tiles.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
+import { NgChartsModule } from 'ng2-charts'; 
 
 
 
@@ -39,6 +40,7 @@ import { AddCategoryComponent } from './add-category/add-category.component';
     MatOptionModule, 
     PagesRoutingModule,
     TablerIconsModule.pick(TablerIcons),
+    NgChartsModule 
   ],
   exports: [TablerIconsModule],
 })
